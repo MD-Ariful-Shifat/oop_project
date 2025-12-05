@@ -21,7 +21,8 @@ public class PaymentSystemOperatorDashController
     }
 
     @javafx.fxml.FXML
-    public void signOut(ActionEvent actionEvent) {
+    public void signOut(ActionEvent actionEvent) throws IOException {
+        SceneSwitching.sceneSwitch(actionEvent, "saida/fxml/Login.fxml", "Bangladesh Bank - Login");
     }
 
     @javafx.fxml.FXML

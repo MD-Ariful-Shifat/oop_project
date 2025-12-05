@@ -96,7 +96,7 @@ public class ManageBankAuditResultsController
 
     @javafx.fxml.FXML
     public void signOutt(ActionEvent actionEvent) throws IOException {
-        SceneSwitcher.sceneSwitch(actionEvent, "shifat/DirectorofBankingRegulation.fxml", "Sign Out");
+        SceneSwitcher.sceneSwitch(actionEvent, "saida/fxml/Login.fxml", "Bangladesh Bank - Login");
 
     }
 }

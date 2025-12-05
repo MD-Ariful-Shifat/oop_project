@@ -94,6 +94,6 @@ public class ForeignExchangeDealerController
 
     @javafx.fxml.FXML
     public void signOutOnAction(ActionEvent actionEvent) throws IOException {
-        SceneSwitching.sceneSwitch(actionEvent, "Sara/ForeignExchangeDealer_Dash.fxml", "Sign Out");
+        SceneSwitching.sceneSwitch(actionEvent, "saida/fxml/Login.fxml", "Bangladesh Bank - Login");
     }
 }

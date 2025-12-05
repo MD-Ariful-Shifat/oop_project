@@ -80,7 +80,7 @@ public class ManageLoanRequestsController
 
     @javafx.fxml.FXML
     public void signOut(ActionEvent actionEvent) throws IOException {
-        SceneSwitcher.sceneSwitch(actionEvent, "shifat/DirectorofBankingRegulation.fxml", "Sign Out");
+        SceneSwitcher.sceneSwitch(actionEvent, "saida/fxml/Login.fxml", "Bangladesh Bank - Login");
 
     }
 

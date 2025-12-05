@@ -49,7 +49,8 @@ public class LoginController implements Initializable {
             "Commercial Bank Manager",
             "Ministry of Finance Representative",
             "Governor",
-            "Director of Banking Regulation"
+            "Director of Banking Regulation",
+            "Foreign Exchange Department"
         ));
         
         // Clear error label initially
@@ -122,11 +123,11 @@ public class LoginController implements Initializable {
                 case "Director of Banking Regulation":
                     fxmlPath = "/com/example/simulation_of_bangladesh_bank/shifat/DirectorofBankingRegulation.fxml";
                     break;
-                default:
-                    fxmlPath = "/com/example/simulation_of_bangladesh_bank/saida/fxml/MinistryFinanceRepDashboard.fxml";
-                    break;
                 case "Foreign Exchange Department":
                     fxmlPath = "/com/example/simulation_of_bangladesh_bank/Sara/ForeignExchangeDealer_Dash.fxml";
+                    break;
+                default:
+                    fxmlPath = "/com/example/simulation_of_bangladesh_bank/saida/fxml/MinistryFinanceRepDashboard.fxml";
                     break;
             }
 

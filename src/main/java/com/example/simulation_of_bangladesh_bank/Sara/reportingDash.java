@@ -1,11 +1,12 @@
 package com.example.simulation_of_bangladesh_bank.Sara;
 
+import javafx.event.ActionEvent;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
-import javax.swing.table.TableColumn;
-import javax.swing.text.TableView;
-import java.awt.*;
-import java.awt.event.ActionEvent;
+import java.io.IOException;
 
 public class reportingDash {
     @javafx.fxml.FXML
@@ -30,6 +31,7 @@ public class reportingDash {
     }
 
     @javafx.fxml.FXML
-    public void signOutButton(ActionEvent actionEvent) {
+    public void signOutButton(ActionEvent actionEvent) throws IOException {
+        SceneSwitching.sceneSwitch(actionEvent, "saida/fxml/Login.fxml", "Bangladesh Bank - Login");
     }
 }

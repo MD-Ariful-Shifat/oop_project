@@ -77,7 +77,6 @@ public class ProcessInterbankFundTransfersController
 
     @javafx.fxml.FXML
     public void signOut(ActionEvent actionEvent) throws IOException {
-        SceneSwitching.sceneSwitch(actionEvent, "Sara/PaymentSystemOperatorDash.fxml", "Sign Out");
-
+        SceneSwitching.sceneSwitch(actionEvent, "saida/fxml/Login.fxml", "Bangladesh Bank - Login");
     }
 }

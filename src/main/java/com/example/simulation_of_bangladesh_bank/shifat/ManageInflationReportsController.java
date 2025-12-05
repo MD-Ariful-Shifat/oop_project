@@ -69,7 +69,7 @@ public class ManageInflationReportsController
 
     @Deprecated
     public void signOut(ActionEvent actionEvent) throws IOException {
-        SceneSwitcher.sceneSwitch(actionEvent, "shifat/GovernorDash.fxml", "Sign Out");
+        SceneSwitcher.sceneSwitch(actionEvent, "saida/fxml/Login.fxml", "Bangladesh Bank - Login");
 
     }
 
@@ -99,7 +99,7 @@ public class ManageInflationReportsController
 
     @javafx.fxml.FXML
     public void signOutt(ActionEvent actionEvent) throws IOException  {
-        SceneSwitcher.sceneSwitch(actionEvent, "shifat/GovernorDash.fxml", "Sign Out");
+        SceneSwitcher.sceneSwitch(actionEvent, "saida/fxml/Login.fxml", "Bangladesh Bank - Login");
 
     }
 }

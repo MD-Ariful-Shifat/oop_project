@@ -5,6 +5,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.File;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -94,7 +95,8 @@ public class ManageLoanApprovalController
     }
 
     @javafx.fxml.FXML
-    public void signOut(ActionEvent actionEvent) {
+    public void signOut(ActionEvent actionEvent) throws IOException {
+        SceneSwitcher.sceneSwitch(actionEvent, "saida/fxml/Login.fxml", "Bangladesh Bank - Login");
     }
 
     @javafx.fxml.FXML
