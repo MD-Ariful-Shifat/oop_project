@@ -93,6 +93,10 @@ public class ManageInspectionSchedulesController
             }
 
         }
+        BinaryFileHelper.writeAllObjects(file, manageInspectionSchedulesArrayList);
+        manageInspectionSchedulesArrayList = BinaryFileHelper.readAllObjects(file);
+        tableview.getItems().clear();
+        tableview.getItems().addAll(manageInspectionSchedulesArrayList);
     }
 
     @javafx.fxml.FXML
@@ -108,11 +112,12 @@ public class ManageInspectionSchedulesController
                 cb.setBankName(bankName2.getText());
                 cb.setDate(inspectionDate2.getValue());
                 cb.setInspectorName(inspectorName2.getText());
-                cb.setStatus(StatusID2.getValue());
                 break;
             }
         }
         BinaryFileHelper.writeAllObjects(file, manageInspectionSchedulesArrayList);
-        initialize();
+        manageInspectionSchedulesArrayList = BinaryFileHelper.readAllObjects(file);
+        tableview.getItems().clear();
+        tableview.getItems().addAll(manageInspectionSchedulesArrayList);
     }
 }

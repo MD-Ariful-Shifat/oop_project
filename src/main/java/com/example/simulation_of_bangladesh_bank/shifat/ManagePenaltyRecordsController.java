@@ -79,6 +79,13 @@ public class ManagePenaltyRecordsController
 
     @javafx.fxml.FXML
     public void searchOnClick(ActionEvent actionEvent) {
+        tableID.getItems().clear();
+        for (ManagePenaltyRecords cb: managePenaltyRecordsArrayList) {
+            if (penaltyID3.getText().equals(cb.getPenaltyID())) {
+                tableID.getItems().add(cb);
+                break;
+            }
+        }
     }
 
     @javafx.fxml.FXML
@@ -89,5 +96,15 @@ public class ManagePenaltyRecordsController
 
     @javafx.fxml.FXML
     public void updateOnClicnk(ActionEvent actionEvent) {
+        for (ManagePenaltyRecords cb: managePenaltyRecordsArrayList){
+            if (penaltyID2.getText().equals(cb.getPenaltyID())){
+                cb.setBankName(bankName2.getText());
+                break;
+            }
+        }
+        BinaryFileHelper.writeAllObjects(file, managePenaltyRecordsArrayList);
+        managePenaltyRecordsArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(managePenaltyRecordsArrayList);
     }
 }

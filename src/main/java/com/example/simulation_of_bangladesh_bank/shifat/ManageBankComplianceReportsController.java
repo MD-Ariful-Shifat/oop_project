@@ -86,6 +86,10 @@ public class ManageBankComplianceReportsController
             }
 
         }
+        BinaryFileHelper.writeAllObjects(file, manageBankComplianceReportsArrayList);
+        manageBankComplianceReportsArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageBankComplianceReportsArrayList);
     }
 
     @javafx.fxml.FXML
@@ -93,11 +97,15 @@ public class ManageBankComplianceReportsController
         for (ManageBankComplianceReports cb: manageBankComplianceReportsArrayList){
             if (reportID2.getText().equals(cb.getReportID())){
                 cb.setBankName(bankName2.getText());
+                cb.setSubmissionDate(dateID2.getValue());
+                cb.setStatus(bankName2.getText());
                 break;
             }
         }
         BinaryFileHelper.writeAllObjects(file, manageBankComplianceReportsArrayList);
-        initialize();
+        manageBankComplianceReportsArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageBankComplianceReportsArrayList);
     }
 
     @javafx.fxml.FXML

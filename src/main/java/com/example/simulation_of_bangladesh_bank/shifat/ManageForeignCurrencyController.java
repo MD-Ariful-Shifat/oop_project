@@ -70,6 +70,10 @@ public class ManageForeignCurrencyController
             }
 
         }
+        BinaryFileHelper.writeAllObjects(file, manageForeignCurrencyArrayListList);
+        manageForeignCurrencyArrayListList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageForeignCurrencyArrayListList);
     }
 
     @javafx.fxml.FXML
@@ -100,6 +104,8 @@ public class ManageForeignCurrencyController
             }
         }
         BinaryFileHelper.writeAllObjects(file, manageForeignCurrencyArrayListList);
-        initialize();
+        manageForeignCurrencyArrayListList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageForeignCurrencyArrayListList);
     }
 }

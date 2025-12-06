@@ -79,9 +79,31 @@ public class ManageNational_InterestRatesController
 
     @javafx.fxml.FXML
     public void deleteOnClick(ActionEvent actionEvent) {
+        for (ManageNational_InterestRates cb: manageNational_interestRatesArrayList){
+            if (rateID3.getText().equals(cb.getRateID())){
+                manageNational_interestRatesArrayList.remove(cb);
+                break;
+            }
+
+        }
+        BinaryFileHelper.writeAllObjects(file, manageNational_interestRatesArrayList);
+        manageNational_interestRatesArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageNational_interestRatesArrayList);
     }
 
     @javafx.fxml.FXML
     public void updateOnClicnk(ActionEvent actionEvent) {
+        for (ManageNational_InterestRates cb: manageNational_interestRatesArrayList){
+            if (rateID2.getText().equals(cb.getRateID())){
+                cb.setRateID(rateType2.getValue());
+                cb.setPercentage(percentageID2.getText());
+                break;
+            }
+        }
+        BinaryFileHelper.writeAllObjects(file, manageNational_interestRatesArrayList);
+        manageNational_interestRatesArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageNational_interestRatesArrayList);
     }
 }

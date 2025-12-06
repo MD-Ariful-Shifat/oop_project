@@ -68,6 +68,13 @@ public class ManageLoanRequestsController
 
     @javafx.fxml.FXML
     public void searchOnClick(ActionEvent actionEvent) {
+        tableID.getItems().clear();
+        for (ManageLoanRequests cb: manageLoanRequestsArrayList) {
+            if (loanID3.getText().equals(cb.getLoanId())) {
+                tableID.getItems().add(cb);
+                break;
+            }
+        }
     }
 
     @javafx.fxml.FXML
@@ -106,5 +113,16 @@ public class ManageLoanRequestsController
 
     @javafx.fxml.FXML
     public void updateOnClicnk(ActionEvent actionEvent) {
+        for (ManageLoanRequests cb: manageLoanRequestsArrayList){
+            if (loanID2.getText().equals(cb.getLoanId())){
+                cb.setBankName(nameID2.getText());
+                cb.setStatus(statusID2.getValue());
+                break;
+            }
+        }
+        BinaryFileHelper.writeAllObjects(file, manageLoanRequestsArrayList);
+        manageLoanRequestsArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageLoanRequestsArrayList);
     }
 }

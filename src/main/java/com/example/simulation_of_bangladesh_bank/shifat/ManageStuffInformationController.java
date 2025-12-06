@@ -101,6 +101,10 @@ public class ManageStuffInformationController
             }
 
         }
+        BinaryFileHelper.writeAllObjects(file, manageStaffInformationArrayList);
+        manageStaffInformationArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageStaffInformationArrayList);
     }
 
     @javafx.fxml.FXML
@@ -113,6 +117,8 @@ public class ManageStuffInformationController
             }
         }
         BinaryFileHelper.writeAllObjects(file, manageStaffInformationArrayList);
-        initialize();
+        manageStaffInformationArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageStaffInformationArrayList);
     }
 }

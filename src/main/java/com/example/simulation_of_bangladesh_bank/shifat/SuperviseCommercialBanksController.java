@@ -94,16 +94,27 @@ public class SuperviseCommercialBanksController
     @javafx.fxml.FXML
     public void deleteOnClick(ActionEvent actionEvent) {
         for (SuperviseCommercialBanks cb: superviseCommercialBanksArrayList){
-            if (bankId3.getText().equals(cb.getBankId())){
+            if (bankId4.getText().equals(cb.getBankId())){
                 superviseCommercialBanksArrayList.remove(cb);
                 break;
             }
 
         }
+        BinaryFileHelper.writeAllObjects(file, superviseCommercialBanksArrayList);
+        superviseCommercialBanksArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(superviseCommercialBanksArrayList);
     }
 
     @javafx.fxml.FXML
     public void searchOnClickk(ActionEvent actionEvent) {
+        tableID.getItems().clear();
+        for (SuperviseCommercialBanks cb: superviseCommercialBanksArrayList) {
+            if (bankId3.getText().equals(cb.getBankId())) {
+                tableID.getItems().add(cb);
+                break;
+            }
+        }
     }
 
     @javafx.fxml.FXML
@@ -117,6 +128,8 @@ public class SuperviseCommercialBanksController
             }
         }
         BinaryFileHelper.writeAllObjects(file, superviseCommercialBanksArrayList);
-        initialize();
+        superviseCommercialBanksArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(superviseCommercialBanksArrayList);
     }
 }

@@ -70,12 +70,15 @@ public class ManageMonetaryPoliciesController
             if (policyID2.getText().equals(cb.getPolicyId())){
                 cb.setPolicyName(policyName2.getText());
                 cb.setDescription(descriptionID2.getText());
+                cb.setDescription(dateOfImplementation2.getText());
                 cb.setStatus(StatusID2.getValue());
                 break;
             }
         }
         BinaryFileHelper.writeAllObjects(file, manageMonetaryPoliciesArrayList);
-        initialize();
+        manageMonetaryPoliciesArrayList = BinaryFileHelper.readAllObjects(file);
+        tableview.getItems().clear();
+        tableview.getItems().addAll(manageMonetaryPoliciesArrayList);
     }
 
     @javafx.fxml.FXML
@@ -106,5 +109,9 @@ public class ManageMonetaryPoliciesController
             }
 
         }
+        BinaryFileHelper.writeAllObjects(file, manageMonetaryPoliciesArrayList);
+        manageMonetaryPoliciesArrayList = BinaryFileHelper.readAllObjects(file);
+        tableview.getItems().clear();
+        tableview.getItems().addAll(manageMonetaryPoliciesArrayList);
     }
 }

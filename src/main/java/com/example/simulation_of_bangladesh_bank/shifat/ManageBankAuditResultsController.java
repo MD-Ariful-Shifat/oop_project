@@ -84,6 +84,10 @@ public class ManageBankAuditResultsController
             }
 
         }
+        BinaryFileHelper.writeAllObjects(file, manageBankAuditResultsArrayList);
+        manageBankAuditResultsArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageBankAuditResultsArrayList);
     }
 
     @javafx.fxml.FXML
@@ -95,7 +99,9 @@ public class ManageBankAuditResultsController
             }
         }
         BinaryFileHelper.writeAllObjects(file, manageBankAuditResultsArrayList);
-        initialize();
+        manageBankAuditResultsArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageBankAuditResultsArrayList);
     }
 
     @javafx.fxml.FXML

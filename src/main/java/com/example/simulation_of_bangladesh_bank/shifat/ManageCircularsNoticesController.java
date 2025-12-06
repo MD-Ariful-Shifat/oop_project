@@ -86,6 +86,17 @@ public class ManageCircularsNoticesController
 
     @javafx.fxml.FXML
     public void deleteOnClick(ActionEvent actionEvent) {
+        for (ManageCircularsNotices cb: manageCircularsNoticesArrayList){
+            if (circularID3.getText().equals(cb.getCircularID())){
+                manageCircularsNoticesArrayList.remove(cb);
+                break;
+            }
+
+        }
+        BinaryFileHelper.writeAllObjects(file, manageCircularsNoticesArrayList);
+        manageCircularsNoticesArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageCircularsNoticesArrayList);
 
 
     }
@@ -96,11 +107,12 @@ public class ManageCircularsNoticesController
             if (circularID2.getText().equals(cb.getCircularID())){
                 cb.setTitle(titleID2.getText());
                 cb.setStatus(statusID2.getValue());
-                cb.setStatus(statusID2.getValue());
                 break;
             }
         }
         BinaryFileHelper.writeAllObjects(file, manageCircularsNoticesArrayList);
-        initialize();
+        manageCircularsNoticesArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageCircularsNoticesArrayList);
     }
 }

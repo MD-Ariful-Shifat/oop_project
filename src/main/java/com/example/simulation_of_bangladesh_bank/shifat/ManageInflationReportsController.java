@@ -87,6 +87,10 @@ public class ManageInflationReportsController
             }
 
         }
+        BinaryFileHelper.writeAllObjects(file, manageInflationReportsArrayList);
+        manageInflationReportsArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageInflationReportsArrayList);
     }
 
     @javafx.fxml.FXML
@@ -99,7 +103,9 @@ public class ManageInflationReportsController
             }
         }
         BinaryFileHelper.writeAllObjects(file, manageInflationReportsArrayList);
-        initialize();
+        manageInflationReportsArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageInflationReportsArrayList);
     }
 
     @javafx.fxml.FXML

@@ -93,6 +93,10 @@ public class ManageCircularsForBanksController
             }
 
         }
+        BinaryFileHelper.writeAllObjects(file, manageCircularsForBanksArrayList);
+        manageCircularsForBanksArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageCircularsForBanksArrayList);
     }
 
     @javafx.fxml.FXML
@@ -105,7 +109,9 @@ public class ManageCircularsForBanksController
             }
         }
         BinaryFileHelper.writeAllObjects(file, manageCircularsForBanksArrayList);
-        initialize();
+        manageCircularsForBanksArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageCircularsForBanksArrayList);
 
     }
 }

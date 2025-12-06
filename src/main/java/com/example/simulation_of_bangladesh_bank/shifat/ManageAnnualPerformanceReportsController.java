@@ -84,17 +84,23 @@ public class ManageAnnualPerformanceReportsController
             }
 
         }
+        BinaryFileHelper.writeAllObjects(file, manageAnnualPerformanceReportsArrayList);
+        manageAnnualPerformanceReportsArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageAnnualPerformanceReportsArrayList);
     }
 
     @javafx.fxml.FXML
     public void updateOnClicnk(ActionEvent actionEvent) {
         for (ManageAnnualPerformanceReports cb: manageAnnualPerformanceReportsArrayList){
             if (reportID2.getText().equals(cb.getReport())){
-                cb.setReport(reportID2.getText());
+                cb.setBankName(bankName2.getText());
                 break;
             }
         }
         BinaryFileHelper.writeAllObjects(file, manageAnnualPerformanceReportsArrayList);
-        initialize();
+        manageAnnualPerformanceReportsArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageAnnualPerformanceReportsArrayList);
     }
 }
