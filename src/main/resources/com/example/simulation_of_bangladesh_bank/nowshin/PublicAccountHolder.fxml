@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simulation_of_bangladesh_bank.nowshin.PublicAccountHolderController">
+   <children>
+      <TableView fx:id="tableID" layoutX="14.0" layoutY="186.0" prefHeight="200.0" prefWidth="453.0">
+        <columns>
+          <TableColumn fx:id="nameColumn" prefWidth="95.33331298828125" text="Name" />
+          <TableColumn fx:id="idColumn" prefWidth="103.33334350585938" text="ID" />
+            <TableColumn fx:id="accountColumn" prefWidth="120.66665649414062" text="Account Number" />
+            <TableColumn fx:id="dateColumn" prefWidth="134.00006103515625" text="Opening Date" />
+        </columns>
+      </TableView>
+      <Text layoutX="24.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
+      <Text layoutX="24.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" />
+      <Text layoutX="25.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account number:" />
+      <Text layoutX="20.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opening Date:" />
+      <TextField fx:id="nameID" layoutX="70.0" layoutY="10.0" />
+      <TextField fx:id="accountNum" layoutX="134.0" layoutY="78.0" />
+      <TextField fx:id="userID" layoutX="70.0" layoutY="40.0" />
+      <DatePicker fx:id="date" layoutX="109.0" layoutY="106.0" prefHeight="25.0" prefWidth="149.0" />
+      <Text layoutX="377.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" />
+      <TextField fx:id="userID2" layoutX="423.0" layoutY="18.0" />
+      <Button layoutX="108.0" layoutY="143.0" mnemonicParsing="false" onAction="#openOnAction" text="Open Account" />
+      <Button layoutX="421.0" layoutY="47.0" mnemonicParsing="false" onAction="#searchOnAction" text="Search" />
+      <Button layoutX="509.0" layoutY="343.0" mnemonicParsing="false" onAction="#signOut" text="Sign Out" />
+      <Line endX="-100.0" endY="141.00001525878906" layoutX="421.0" layoutY="23.0" startX="-100.0" />
+   </children>
+</AnchorPane>

@@ -18,4 +18,6 @@ module com.example.simulation_of_bangladesh_bank {
     exports com.example.simulation_of_bangladesh_bank.saida.util;
     exports com.example.simulation_of_bangladesh_bank.saida.model;
     exports com.example.simulation_of_bangladesh_bank.Sara;
+    exports com.example.simulation_of_bangladesh_bank.nowshin;
+    opens com.example.simulation_of_bangladesh_bank.nowshin to javafx.fxml;
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simulation_of_bangladesh_bank.nowshin.VerifyRegulatoryComplianceController">
+   <children>
+      <Text layoutX="24.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regulation ID:" />
+      <Text layoutX="24.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regulation Title:" />
+      <Text layoutX="24.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Effective Date:" />
+      <TextField fx:id="regulationID" layoutX="122.0" layoutY="27.0" />
+      <TextField fx:id="titleId" layoutX="122.0" layoutY="53.0" />
+      <DatePicker fx:id="effectiveDate" layoutX="122.0" layoutY="80.0" prefHeight="25.0" prefWidth="149.0" />
+      <Line endX="-100.0" endY="133.6666717529297" layoutX="393.0" layoutY="31.0" startX="-100.0" startY="-10.333333969116211" />
+      <Text layoutX="310.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regulation ID:" />
+      <Text layoutX="310.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Effective Date:" />
+      <TextField fx:id="regulationID2" layoutX="408.0" layoutY="27.0" />
+      <DatePicker fx:id="effectiveDate2" layoutX="408.0" layoutY="54.0" prefHeight="25.0" prefWidth="149.0" />
+      <Button layoutX="122.0" layoutY="118.0" mnemonicParsing="false" onAction="#addOnAction" text="Add" />
+      <Button layoutX="408.0" layoutY="92.0" mnemonicParsing="false" onAction="#updateOnAction" text="Update" />
+      <TableView fx:id="tableID" layoutX="9.0" layoutY="186.0" prefHeight="200.0" prefWidth="368.0">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="122.66665649414062" text="Regulation ID" />
+          <TableColumn fx:id="titleColumn" prefWidth="122.66668701171875" text="Regulation Title" />
+            <TableColumn fx:id="dateColumn" prefWidth="122.0" text="Effective Date" />
+        </columns>
+      </TableView>
+      <Text layoutX="385.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regulation ID:" />
+      <TextField fx:id="regulationID3" layoutX="463.0" layoutY="199.0" prefHeight="25.0" prefWidth="122.0" />
+      <Button layoutX="463.0" layoutY="232.0" mnemonicParsing="false" onAction="#deleteOnAction" text="Delete" />
+      <Button layoutX="532.0" layoutY="347.0" mnemonicParsing="false" onAction="#backOnAction" text="Back" />
+   </children>
+</AnchorPane>
