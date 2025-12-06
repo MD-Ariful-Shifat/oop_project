@@ -55,15 +55,20 @@ public class ManageNational_InterestRatesController
 
     @javafx.fxml.FXML
     public void addOnClick(ActionEvent actionEvent) {
-        ManageNational_InterestRates manageNational_interestRates = new ManageNational_InterestRates(
+        ManageNational_InterestRates manageMonetaryPolicies = new ManageNational_InterestRates(
                 rateID1.getText(),
                 rateType1.getValue(),
                 percentageID1.getText(),
                 effectiveDate.getValue()
+
+
         );
 
-        manageNational_interestRatesArrayList.add(manageNational_interestRates);
+        manageNational_interestRatesArrayList.add(manageMonetaryPolicies);
         BinaryFileHelper.writeAllObjects(file, manageNational_interestRatesArrayList);
+        manageNational_interestRatesArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageNational_interestRatesArrayList);
     }
 
     @javafx.fxml.FXML

@@ -59,10 +59,14 @@ public class ManageAnnualPerformanceReportsController
                 yearID.getValue(),
                 remarkID.getText()
 
+
         );
 
         manageAnnualPerformanceReportsArrayList.add(manageAnnualPerformanceReports);
         BinaryFileHelper.writeAllObjects(file, manageAnnualPerformanceReportsArrayList);
+        manageAnnualPerformanceReportsArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageAnnualPerformanceReportsArrayList);
     }
 
     @javafx.fxml.FXML

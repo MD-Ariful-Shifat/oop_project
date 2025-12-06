@@ -73,10 +73,15 @@ public class ManageInspectionSchedulesController
                 inspectionDate.getValue(),
                 inspectorName.getText(),
                 StatusID1.getValue()
+
+
         );
 
         manageInspectionSchedulesArrayList.add(manageInspectionSchedules);
         BinaryFileHelper.writeAllObjects(file, manageInspectionSchedulesArrayList);
+        manageInspectionSchedulesArrayList = BinaryFileHelper.readAllObjects(file);
+        tableview.getItems().clear();
+        tableview.getItems().addAll(manageInspectionSchedulesArrayList);
     }
 
     @javafx.fxml.FXML

@@ -67,10 +67,15 @@ public class ManageCircularsNoticesController
                 issueDate.getValue(),
                 expireDate.getValue(),
                 statusID1.getValue()
-    );
+
+
+        );
 
         manageCircularsNoticesArrayList.add(manageCircularsNotices);
         BinaryFileHelper.writeAllObjects(file, manageCircularsNoticesArrayList);
+        manageCircularsNoticesArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageCircularsNoticesArrayList);
     }
 
     @javafx.fxml.FXML

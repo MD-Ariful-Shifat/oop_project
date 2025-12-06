@@ -68,10 +68,14 @@ public class ManageCircularsForBanksController
                 expireDate.getValue(),
                 statusID1.getValue()
 
+
         );
 
         manageCircularsForBanksArrayList.add(manageCircularsForBanks);
         BinaryFileHelper.writeAllObjects(file, manageCircularsForBanksArrayList);
+        manageCircularsForBanksArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageCircularsForBanksArrayList);
     }
 
     @javafx.fxml.FXML

@@ -101,11 +101,12 @@ public class ManageCommercialBankController
                 break;
             }
 
-            }
+        }
         BinaryFileHelper.writeAllObjects(file, manageCommercialBankArrayList);
         manageCommercialBankArrayList = BinaryFileHelper.readAllObjects(file);
         tableID.getItems().clear();
-        tableID.getItems().addAll(manageCommercialBankArrayList);        }
+        tableID.getItems().addAll(manageCommercialBankArrayList);
+    }
 
     @javafx.fxml.FXML
     public void updateOnClicnk(ActionEvent actionEvent) {
@@ -120,7 +121,8 @@ public class ManageCommercialBankController
         BinaryFileHelper.writeAllObjects(file, manageCommercialBankArrayList);
         manageCommercialBankArrayList = BinaryFileHelper.readAllObjects(file);
         tableID.getItems().clear();
-        tableID.getItems().addAll(manageCommercialBankArrayList);    }
+        tableID.getItems().addAll(manageCommercialBankArrayList);
+    }
 
     @javafx.fxml.FXML
     public void signOut1(ActionEvent actionEvent) throws IOException {

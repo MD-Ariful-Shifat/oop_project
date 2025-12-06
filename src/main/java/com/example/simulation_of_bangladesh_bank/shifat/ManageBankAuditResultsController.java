@@ -65,10 +65,14 @@ public class ManageBankAuditResultsController
                 auditorName.getText(),
                 summaryID.getText()
 
+
         );
 
         manageBankAuditResultsArrayList.add(manageBankAuditResults);
         BinaryFileHelper.writeAllObjects(file, manageBankAuditResultsArrayList);
+        manageBankAuditResultsArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageBankAuditResultsArrayList);
     }
 
     @javafx.fxml.FXML

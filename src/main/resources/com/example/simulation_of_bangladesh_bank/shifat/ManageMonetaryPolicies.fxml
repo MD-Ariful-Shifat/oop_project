@@ -17,7 +17,7 @@
       <Text layoutX="19.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description:" />
       <Text layoutX="21.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Implementation:" />
       <Text layoutX="23.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status:" />
-      <Button layoutX="731.0" layoutY="20.0" mnemonicParsing="false" onAction="#signoutOnAction" text="Sign Out" />
+      <Button layoutX="784.0" layoutY="20.0" mnemonicParsing="false" onAction="#signoutOnAction" text="Back" />
       <Button layoutX="112.0" layoutY="210.0" mnemonicParsing="false" onAction="#saveOnAction" text="Save Policy" />
       <TextField fx:id="policyID1" layoutX="95.0" layoutY="20.0" />
       <TextField fx:id="policyName1" layoutX="95.0" layoutY="53.0" />

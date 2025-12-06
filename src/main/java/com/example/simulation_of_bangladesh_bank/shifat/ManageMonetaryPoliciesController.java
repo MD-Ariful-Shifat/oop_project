@@ -86,10 +86,15 @@ public class ManageMonetaryPoliciesController
                 descriptionID1.getText(),
                 dateOfImplementation1.getValue(),
                 StatusID1.getValue()
+
+
         );
 
         manageMonetaryPoliciesArrayList.add(manageMonetaryPolicies);
         BinaryFileHelper.writeAllObjects(file, manageMonetaryPoliciesArrayList);
+        manageMonetaryPoliciesArrayList = BinaryFileHelper.readAllObjects(file);
+        tableview.getItems().clear();
+        tableview.getItems().addAll(manageMonetaryPoliciesArrayList);
     }
 
     @javafx.fxml.FXML

@@ -76,10 +76,14 @@ public class ManageStuffInformationController
                 salaryID.getText(),
                 statusID1.getValue()
 
+
         );
 
         manageStaffInformationArrayList.add(manageStaffInformation);
         BinaryFileHelper.writeAllObjects(file, manageStaffInformationArrayList);
+        manageStaffInformationArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageStaffInformationArrayList);
     }
 
     @javafx.fxml.FXML

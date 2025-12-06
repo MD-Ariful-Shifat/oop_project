@@ -67,10 +67,14 @@ public class ManageBankComplianceReportsController
                 summaryID.getText(),
                 statusID.getValue()
 
+
         );
 
         manageBankComplianceReportsArrayList.add(manageBankComplianceReports);
         BinaryFileHelper.writeAllObjects(file, manageBankComplianceReportsArrayList);
+        manageBankComplianceReportsArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageBankComplianceReportsArrayList);
     }
 
     @javafx.fxml.FXML

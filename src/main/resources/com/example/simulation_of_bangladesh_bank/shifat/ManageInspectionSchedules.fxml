@@ -17,7 +17,7 @@
       <Text layoutX="15.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inspection Date:" />
       <Text layoutX="15.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inspector Name:" />
       <Text layoutX="17.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status:" />
-      <Button layoutX="790.0" layoutY="20.0" mnemonicParsing="false" onAction="#signoutOnAction" text="Sign Out" />
+      <Button layoutX="790.0" layoutY="20.0" mnemonicParsing="false" onAction="#signoutOnAction" text="Back" />
       <Button layoutX="112.0" layoutY="210.0" mnemonicParsing="false" onAction="#addOnAction" text="Add Schedule" />
       <TextField fx:id="inspectionID1" layoutX="113.0" layoutY="20.0" />
       <TextField fx:id="bankName1" layoutX="113.0" layoutY="53.0" />

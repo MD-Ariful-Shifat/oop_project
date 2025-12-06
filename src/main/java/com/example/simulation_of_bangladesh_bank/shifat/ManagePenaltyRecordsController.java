@@ -67,10 +67,14 @@ public class ManagePenaltyRecordsController
                 reasonID.getText(),
                 dateID.getValue()
 
+
         );
 
         managePenaltyRecordsArrayList.add(managePenaltyRecords);
         BinaryFileHelper.writeAllObjects(file, managePenaltyRecordsArrayList);
+        managePenaltyRecordsArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(managePenaltyRecordsArrayList);
     }
 
     @javafx.fxml.FXML

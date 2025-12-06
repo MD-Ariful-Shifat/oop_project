@@ -93,10 +93,15 @@ public class ManageLoanRequestsController
                 purposeID1.getText(),
                 applicationDate1.getValue(),
                 statusID1.getValue()
+
+
         );
 
         manageLoanRequestsArrayList.add(manageLoanRequests);
         BinaryFileHelper.writeAllObjects(file, manageLoanRequestsArrayList);
+        manageLoanRequestsArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageLoanRequestsArrayList);
     }
 
     @javafx.fxml.FXML

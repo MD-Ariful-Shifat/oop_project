@@ -61,10 +61,15 @@ public class ManageInflationReportsController
                 yearID1.getValue(),
                 inflationID1.getText(),
                 commentID.getText()
-        );
+
+
+                );
 
         manageInflationReportsArrayList.add(manageInflationReports);
         BinaryFileHelper.writeAllObjects(file, manageInflationReportsArrayList);
+        manageInflationReportsArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageInflationReportsArrayList);
     }
 
     @Deprecated

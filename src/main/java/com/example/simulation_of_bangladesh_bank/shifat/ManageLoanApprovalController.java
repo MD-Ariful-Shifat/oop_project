@@ -114,6 +114,9 @@ public class ManageLoanApprovalController
 
         manageLoanApprovalArrayList.add(manageLoanApproval);
         BinaryFileHelper.writeAllObjects(file, manageLoanApprovalArrayList);
+        manageLoanApprovalArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageLoanApprovalArrayList);
     }
 
     @javafx.fxml.FXML

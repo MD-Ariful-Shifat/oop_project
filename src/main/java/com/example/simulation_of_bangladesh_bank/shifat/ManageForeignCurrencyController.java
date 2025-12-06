@@ -80,10 +80,14 @@ public class ManageForeignCurrencyController
                 currencyType1.getValue(),
                 lastUpdatedDate.getValue()
 
+
         );
 
         manageForeignCurrencyArrayListList.add(manageForeignCurrency);
         BinaryFileHelper.writeAllObjects(file, manageForeignCurrencyArrayListList);
+        manageForeignCurrencyArrayListList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(manageForeignCurrencyArrayListList);
     }
 
     @javafx.fxml.FXML

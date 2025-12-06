@@ -75,10 +75,14 @@ public class SuperviseCommercialBanksController
                 typeID.getValue(),
                 statusID.getValue()
 
+
         );
 
         superviseCommercialBanksArrayList.add(superviseCommercialBanks);
         BinaryFileHelper.writeAllObjects(file, superviseCommercialBanksArrayList);
+        superviseCommercialBanksArrayList = BinaryFileHelper.readAllObjects(file);
+        tableID.getItems().clear();
+        tableID.getItems().addAll(superviseCommercialBanksArrayList);
     }
 
     @javafx.fxml.FXML
