@@ -4,11 +4,19 @@ target/
 !**/src/test/**/target/
 .kotlin
 
+### Data files (regenerated on first run) ###
+data/*.bin
+
+### Output files ###
+output/certificates/*
+output/letters/*
+output/reports/*
+!output/certificates/.gitkeep
+!output/letters/.gitkeep
+!output/reports/.gitkeep
+
 ### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
+.idea/
 *.iws
 *.iml
 *.ipr
